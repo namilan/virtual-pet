@@ -1,16 +1,18 @@
-import java.util.Random;
+
 
 public class VirtualPet {
-//	private Random generator = new Random();
 	
+	//Attributes
 	protected String name;
 	protected String type;
-	protected String color;
-//	private int hunger;
-//	private int bored;
-//	private int happy;
-//	private int mad;
-//	private int sleep;
+	protected String color;	
+	protected int hunger;
+	protected int bored;
+	protected int happy;
+	protected int mad;
+	protected int sleep;
+	
+	//Constructor
 
 	public VirtualPet(String petName, String typeOfPet, String color) {
 		petName = this.name;
@@ -19,6 +21,8 @@ public class VirtualPet {
 		
 	}
 
+	// Getters
+	
 	public String getPetName() {
 		return this.name;
 	}
@@ -31,4 +35,23 @@ public class VirtualPet {
 		return this.color;
 	}
 
+	public int getHunger() {
+		return this.hunger;
+	}
+
+	public int getBored() {
+		return this.bored;
+	}
+	
+	public int getHappy() {
+		return this.happy;
+	}
+	
+	public int getMad() {
+		return this.mad;
+	}
+	
+	public int getSleep() {
+		return this.sleep;
+	}
 }

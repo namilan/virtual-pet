@@ -24,6 +24,33 @@ public class VirtualPetTest {
 		assertEquals("Red", underTest.getColor());
 	}
 	
+	@Test
+	public void DoesHungerGetterWork() {
+		underTest.hunger = 25;
+		assertEquals(25, underTest.getHunger());
+	}
 	
-
+	@Test
+	public void DoesBoredGetterWork() {
+		underTest.bored = 45;
+		assertEquals(45, underTest.getBored());
+	}
+	
+	@Test
+	public void DoesHappyGetterWork() {
+		underTest.happy = 60;
+		assertEquals(60, underTest.getHappy());
+	}
+	
+	@Test
+	public void DoesMadGetterWork() {
+		underTest.mad = 10;
+		assertEquals(10, underTest.getMad());
+	}
+	
+	@Test
+	public void DoesSleepGetterWork() {
+		underTest.sleep = 45;
+		assertEquals(45, underTest.getSleep());
+	}
 }
