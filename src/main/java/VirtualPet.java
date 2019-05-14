@@ -46,15 +46,15 @@ public class VirtualPet {
 	
 	public boolean isHungry() {
 		return hunger >= 25;
-	}
+	}  // needs to be tested
 	
 	public void feedAGopher() {
 		hunger -= 100;
-	}
+	}  // needs to be tested
 	
 	public boolean isStarving() {
 		return hunger >=120;
-	}
+	}  // needs to be tested
 	
 	//Bored
 	
@@ -62,16 +62,44 @@ public class VirtualPet {
 		return this.bored;
 	}
 	
+	public void play() {
+		hunger += 5;
+		bored -= 55;
+	} // needs to be testesd
+	
+	
+	// Happy
+	
 	public int getHappy() {
 		return this.happy;
 	}
+	
+	//Happy Actions
+	public boolean isHappy() {
+		return happy >= 60;
+	} // needs to be tested
+	
+	//Mad
 	
 	public int getMad() {
 		return this.mad;
 	}
 	
+	//Mad Actions
+	public boolean isMad() {
+		return mad <=10;
+	} // needs to be tested
+	
+	//Sleep
+	
 	public int getSleep() {
 		return this.sleep;
+	}
+	
+	//Sleep Actions
+	public boolean isSleep() {
+		return sleep <=45;
+	
 	}
 	
 	public int generateRandom() {

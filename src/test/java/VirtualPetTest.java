@@ -53,4 +53,5 @@ public class VirtualPetTest {
 		underTest.sleep = 45;
 		assertEquals(45, underTest.getSleep());
 	}
+
 }
