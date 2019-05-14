@@ -1,6 +1,7 @@
-
+import java.util.Random;
 
 public class VirtualPet {
+	private Random generator = new Random();
 	
 	//Attributes
 	protected String name;
@@ -21,7 +22,7 @@ public class VirtualPet {
 		
 	}
 
-	// Getters
+	// Getters below this line 
 	
 	public String getPetName() {
 		return this.name;
@@ -34,11 +35,29 @@ public class VirtualPet {
 	public String getColor() {
 		return this.color;
 	}
+	
+	//Hunger Getter
 
 	public int getHunger() {
 		return this.hunger;
 	}
-
+	
+	//Hunger Actions
+	
+	public boolean isHungry() {
+		return hunger >= 25;
+	}
+	
+	public void feedAGopher() {
+		hunger -= 100;
+	}
+	
+	public boolean isStarving() {
+		return hunger >=120;
+	}
+	
+	//Bored
+	
 	public int getBored() {
 		return this.bored;
 	}
@@ -53,5 +72,28 @@ public class VirtualPet {
 	
 	public int getSleep() {
 		return this.sleep;
+	}
+	
+	public int generateRandom() {
+		return generator.nextInt(10);
+	}
+	
+	//Tick Generator
+	public void tick() {
+		hunger += (25 + generateRandom());
+		bored -= (45 + generateRandom());
+		happy += (60 + generateRandom());
+		mad -= (10 + generateRandom());
+		sleep -= (45 + generateRandom());		
+	}
+	
+	//Tick Reset
+	public void reset() {
+		hunger = 0;
+		bored = 0;
+		happy = 0;
+		mad = 0;
+		sleep = 0;
+		
 	}
 }
