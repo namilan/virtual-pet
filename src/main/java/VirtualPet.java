@@ -4,7 +4,7 @@ public class VirtualPet {
 	private Random generator = new Random();
 	
 	//Attributes
-	protected String name;
+	protected String name = "Ronny";
 	protected String type;
 	protected String color;	
 	protected int hunger;
