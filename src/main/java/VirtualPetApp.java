@@ -78,7 +78,7 @@ public class VirtualPetApp {
 				raptor.getSleep();
 				raptor.tick();
 			} else {
-				System.out.println(raptor.getPetName() + " is not sleep.He wants to play!");
+				System.out.println(raptor.getPetName() + " is not tired.He wants to play!");
 				raptor.tick();
 			}
 		break;
@@ -116,7 +116,6 @@ public class VirtualPetApp {
 			
 		//Tick Methods
 //			
-//		//Hunger Tick
 //				
 			if (raptor.isStarving()) {	
 				System.out.println(raptor.getPetName() + " is starving and died.");

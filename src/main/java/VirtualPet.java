@@ -53,7 +53,7 @@ public class VirtualPet {
 	}  
 	
 	public boolean isStarving() {
-		return hunger >= 100;
+		return hunger <= 100;
 	} 
 	
 	//Bored
@@ -114,7 +114,7 @@ public class VirtualPet {
 	public void tick() {
 		hunger += (5 + generateRandom());
 		bored += (5 + generateRandom());
-		happy += (6 + generateRandom());
+		happy -= (6 + generateRandom());
 		mad += (5 + generateRandom());
 		sleep += (5 + generateRandom());		
 	}
