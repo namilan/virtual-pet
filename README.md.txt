@@ -19,3 +19,7 @@ started working on my app.
 if Ronny could stop getting mad at me for the love
 of everything holy and stop running away, that would
 be great... 
+added more to the test method.
+tested and it returned green.
+i tried to make my menu loop, 
+but it wasn't looping to where i liked it be. 

@@ -7,11 +7,11 @@ public class VirtualPet {
 	protected String name = "Ronny";
 	protected String type;
 	protected String color;	
-	protected int hunger;
-	protected int bored;
-	protected int happy;
-	protected int mad;
-	protected int sleep;
+	protected int hunger = 50;
+	protected int bored = 50;
+	protected int happy = 60;
+	protected int mad = 10;
+	protected int sleep = 50;
 	
 	//Constructor
 
@@ -49,7 +49,7 @@ public class VirtualPet {
 	}  
 	
 	public void feedAGopher() {
-		hunger = 75;
+		hunger += 15;
 	}  
 	
 	public boolean isStarving() {
@@ -60,6 +60,10 @@ public class VirtualPet {
 	
 	public int getBored() {
 		return this.bored;
+	}
+	
+	public boolean isBored() {
+		return bored >=20;
 	}
 	
 	public void playGame() {
@@ -104,23 +108,32 @@ public class VirtualPet {
 		return generator.nextInt(10);
 	}
 	
+
+	
 	//Tick Generator
 	public void tick() {
 		hunger += (25 + generateRandom());
-		bored -= (45 + generateRandom());
+		bored -= (50 + generateRandom());
 		happy += (60 + generateRandom());
 		mad -= (10 + generateRandom());
-		sleep -= (5 + generateRandom());		
+		sleep -= (50 + generateRandom());		
 	}
 	
 	//Tick Reset
 	public void reset() {
-		hunger = 0;
-		bored = 0;
-		happy = 0;
-		mad = 0;
+		hunger = 50;
+		bored = 50;
+		happy = 50;
+		mad = 50;
 		sleep = 0;
 		
+	}
+	boolean isAlive() {
+		if(hunger < 100 && bored < 100 && happy < 100) {
+		return true;
+		} else {
+			return false;
+		}
 	}
 
 }

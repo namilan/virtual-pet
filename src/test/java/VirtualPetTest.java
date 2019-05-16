@@ -64,7 +64,7 @@ public class VirtualPetTest {
 	
 	@Test
 	public void feedRaptorGopherFullyFed() {
-		underTest.hunger = 50;
+		underTest.hunger = 60;
 		underTest.feedAGopher();
 		assertEquals(75, underTest.getHunger());
 	}
@@ -176,4 +176,23 @@ public class VirtualPetTest {
 		underTest.getSleep();
 		assertEquals(0, underTest.getSleep());
 	}
+	
+	@Test
+	public void isAliveHunger_shouldBeTrue() {
+		underTest.hunger = 100;
+		assertTrue(underTest.isHungry());
+	}
+	
+	@Test
+	public void isAliveBored_shouldBeTrue() {
+		underTest.bored = 100;
+		assertTrue(underTest.isBored());
+	}
+	
+	@Test
+	public void isAliveHappy_shouldBeTrue() {
+		underTest.happy = 100;
+		assertTrue(underTest.isHappy());
+	}
+	
 }
