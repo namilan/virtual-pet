@@ -92,7 +92,7 @@ public class VirtualPetApp {
 				System.out.println(raptor.getPetName() + "is going to run away.");
 				raptor.tick();
 			}
-		continue;
+		break;
 		case 6:
 			System.out.println("*Screeeech* *Rawwwrrr*");
 			System.out.println(" e-e ");
@@ -112,37 +112,30 @@ public class VirtualPetApp {
 			continue;
 		}
 		
-		}
-		while (raptor.isAlive());
+		} while (raptor.isAlive());
 			
 		//Tick Methods
-			
-//			raptor.tick();
 //			
 //		//Hunger Tick
-//			if (raptor.isStarving()) {
 //				
-//			if (raptor.isStarving()) {
-//				System.out.println(raptor.getPetName() + " is starving and died. Do you want to try again? (Y/N)");
-//			}			
-//		//MAD Tick
-//			if (raptor.isMad()){
-//				System.out.println(raptor.getPetName()+ " is terribly mad. He has ran away. Do you want to try again? (Y/N)");
-//			}
-//			
-//		//Sleep Tick
-//			if (raptor.isSleep()) {
-//			System.out.println(raptor.getPetName()+ " really needs to sleep. Do you want to put him to sleep? (Y/N)");
-//			}
-//			raptor.reset();
-//			int userInput = input.nextInt();
+			if (raptor.isStarving()) {	
+				System.out.println(raptor.getPetName() + " is starving and died.");
+			}			
+		//MAD Tick
+			if (raptor.isMad()){
+				System.out.println(raptor.getPetName()+ " is terribly mad. He has ran away.");
+			}
+			
+		//Sleep Tick
+			if (raptor.isSleep()) {
+			System.out.println(raptor.getPetName()+ " really needs to sleep. Do you want to put him to sleep?");
+			}
 //			wantsToQuit = userInput("Y");
-//			}
+			
 			
 //			
 //			while (wantsToQuit);
 //			System.out.println("Goodbye.");
 //		}
 	}
-				
 }

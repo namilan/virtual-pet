@@ -8,7 +8,7 @@ public class VirtualPet {
 	protected String type;
 	protected String color;	
 	protected int hunger = 50;
-	protected int bored = 50;
+	protected int bored = 10;
 	protected int happy = 60;
 	protected int mad = 10;
 	protected int sleep = 50;
@@ -53,7 +53,7 @@ public class VirtualPet {
 	}  
 	
 	public boolean isStarving() {
-		return hunger >=120;
+		return hunger >= 100;
 	} 
 	
 	//Bored
@@ -68,7 +68,7 @@ public class VirtualPet {
 	
 	public void playGame() {
 		hunger += 5;
-		bored -= 10;
+		bored -= 3;
 	} 
 		
 	// Happy
@@ -112,11 +112,11 @@ public class VirtualPet {
 	
 	//Tick Generator
 	public void tick() {
-		hunger += (25 + generateRandom());
-		bored -= (50 + generateRandom());
-		happy += (60 + generateRandom());
-		mad -= (10 + generateRandom());
-		sleep -= (50 + generateRandom());		
+		hunger += (5 + generateRandom());
+		bored += (5 + generateRandom());
+		happy += (6 + generateRandom());
+		mad += (5 + generateRandom());
+		sleep += (5 + generateRandom());		
 	}
 	
 	//Tick Reset
@@ -129,8 +129,8 @@ public class VirtualPet {
 		
 	}
 	boolean isAlive() {
-		if(hunger < 100 && bored < 100 && happy < 100) {
-		return true;
+		if(hunger > 100 && bored < 100 && happy > 0) {
+			return true;
 		} else {
 			return false;
 		}
