@@ -28,90 +28,90 @@ public class VirtualPetApp {
 			System.out.println("Sleep Level: " +raptor.getSleep());
 			System.out.println("Mad Level:" +raptor.getMad());
 						
-		System.out.println("");
-		System.out.println("What would you like to do?");
-		System.out.println("1. Play with " + raptor.getPetName());
-		System.out.println("2. Feed " + raptor.getPetName() + " a Gopher.");
-		System.out.println("3. Check on " + raptor.getPetName() + "'s happiness.");
-		System.out.println("4. Check on " + raptor.getPetName() + "'s sleep. Does he need to go to bed?");
-		System.out.println("5. Is Ronny upset?");
-		System.out.println("6. Display Ronny.");
-		System.out.println("7. Quit.");
+			System.out.println("");
+			System.out.println("What would you like to do?");
+			System.out.println("1. Play with " + raptor.getPetName());
+			System.out.println("2. Feed " + raptor.getPetName() + " a Gopher.");
+			System.out.println("3. Check on " + raptor.getPetName() + "'s happiness.");
+			System.out.println("4. Check on " + raptor.getPetName() + "'s sleep. Does he need to go to bed?");
+			System.out.println("5. Is Ronny upset?");
+			System.out.println("6. Display Ronny.");
+			System.out.println("7. Quit.");
 		
-		int userInput = input.nextInt();
+			int userInput = input.nextInt();
 
-		switch (userInput) {
-		case 1:
-			if (raptor.isBored()){
-				System.out.println("You played with " +raptor.getPetName()+ " and he is no longer bored!");
-				raptor.playGame();
-				raptor.tick();
-			}else {
-				System.out.println("Nevermind," +raptor.getPetName()+ " wasn't bored at all.");
-				raptor.tick();
-			}
+			switch (userInput) {
+			case 1:
+				if (raptor.isBored()){
+					System.out.println("You played with " +raptor.getPetName()+ " and he is no longer bored!");
+					raptor.playGame();
+					raptor.tick();
+				}else {
+					System.out.println("Nevermind," +raptor.getPetName()+ " wasn't bored at all.");
+					raptor.tick();
+				}
+				break;
+				
+			case 2:
+				if (raptor.isHungry()) {
+					System.out.println("You fed " +raptor.getPetName()+ " a gopher!");
+					raptor.feedAGopher();
+					raptor.tick();
+				} else {
+					System.out.println(raptor.getPetName()+ " wasn't hungry afterall."); 
+					raptor.tick();
+					}
+			break;
+			case 3:
+				if (raptor.isHappy()) {
+					System.out.println(raptor.getPetName() + " is happy!");
+					raptor.getHappy();
+					raptor.tick();
+				} else {
+					System.out.println(raptor.getPetName() + " is not happy!");
+					raptor.tick();
+				}
+			break;
+			case 4:
+				if (raptor.isSleep()) {
+					System.out.println(raptor.getPetName() + " is sleepy. Time to nap!");
+					raptor.getSleep();
+					raptor.tick();
+				} else {
+					System.out.println(raptor.getPetName() + " is not tired.He wants to play!");
+					raptor.tick();
+				}
 			break;
 			
-		case 2:
-			if (raptor.isHungry()) {
-				System.out.println("You fed " +raptor.getPetName()+ " a gopher!");
-				raptor.feedAGopher();
-				raptor.tick();
-			} else {
-				System.out.println(raptor.getPetName()+ " wasn't hungry afterall."); 
-				raptor.tick();
+			case 5:
+				if (raptor.isMad()) {
+					System.out.println("Please play with " +raptor.getPetName()+ " before he gets mad!");
+					raptor.getMad();
+					raptor.tick();
+				} else {
+					System.out.println(raptor.getPetName() + "is going to run away.");
+					raptor.tick();
 				}
-		break;
-		case 3:
-			if (raptor.isHappy()) {
-				System.out.println(raptor.getPetName() + " is happy!");
-				raptor.getHappy();
-				raptor.tick();
-			} else {
-				System.out.println(raptor.getPetName() + " is not happy!");
-				raptor.tick();
-			}
-		break;
-		case 4:
-			if (raptor.isSleep()) {
-				System.out.println(raptor.getPetName() + " is sleepy. Time to nap!");
-				raptor.getSleep();
-				raptor.tick();
-			} else {
-				System.out.println(raptor.getPetName() + " is not tired.He wants to play!");
-				raptor.tick();
-			}
-		break;
-		
-		case 5:
-			if (raptor.isMad()) {
-				System.out.println("Please play with " +raptor.getPetName()+ " before he gets mad!");
-				raptor.getMad();
-				raptor.tick();
-			} else {
-				System.out.println(raptor.getPetName() + "is going to run away.");
-				raptor.tick();
-			}
-		break;
-		case 6:
-			System.out.println("*Screeeech* *Rawwwrrr*");
-			System.out.println(" e-e ");
-			System.out.println("(\\_/)\\");
-			System.out.println(" `-'\\ `--.___,");
-			System.out.println("    ;\\( ,_.-' ");
-			System.out.println("      \\\\ ");
-			System.out.println("       ^'");
-		break;
+			break;
+			case 6:
+				System.out.println("*Screeeech* *Rawwwrrr*");
+				System.out.println(" e-e ");
+				System.out.println("(\\_/)\\");
+				System.out.println(" `-'\\ `--.___,");
+				System.out.println("    ;\\( ,_.-' ");
+				System.out.println("      \\\\ ");
+				System.out.println("       ^'");
+			break;
+				
+			case 7:
+				System.out.println("Nobody likes a quitter...");
+				System.exit(0);
 			
-		case 7:
-			System.out.println("Nobody likes a quitter...");
-			System.exit(0);
-		
-		default:
-			System.out.println("You did not enter a valid response. Try again.\n");
-			continue;
-		}
-		
+			default:
+				System.out.println("You did not enter a valid response. Try again.\n");
+				continue;
+			}
+			
 		} while (raptor.isAlive());
 			
 		//Tick Methods
@@ -124,12 +124,8 @@ public class VirtualPetApp {
 			if (raptor.isMad()){
 				System.out.println(raptor.getPetName()+ " is terribly mad. He has ran away.");
 			}
-			
-		//Sleep Tick
-			if (raptor.isSleep()) {
-			System.out.println(raptor.getPetName()+ " really needs to sleep. Do you want to put him to sleep?");
-			}
-//			wantsToQuit = userInput("Y");
+
+			System.out.println("Game Over.");
 			
 			
 //			

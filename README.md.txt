@@ -23,3 +23,6 @@ added more to the test method.
 tested and it returned green.
 i tried to make my menu loop, 
 but it wasn't looping to where i liked it be. 
+debugged my code. menu is finally looping
+everything is working to what i would like it 
+to do. 

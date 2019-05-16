@@ -7,9 +7,9 @@ public class VirtualPet {
 	protected String name = "Ronny";
 	protected String type;
 	protected String color;	
-	protected int hunger = 50;
-	protected int bored = 10;
-	protected int happy = 60;
+	protected int hunger = 10;
+	protected int bored = 20;
+	protected int happy = 50;
 	protected int mad = 10;
 	protected int sleep = 50;
 	
@@ -129,7 +129,7 @@ public class VirtualPet {
 		
 	}
 	boolean isAlive() {
-		if(hunger > 100 && bored < 100 && happy > 0) {
+		if(hunger < 100 && bored < 100 && happy > 0) {
 			return true;
 		} else {
 			return false;
